@@ -16,7 +16,14 @@ public abstract class AbstractDao<T, PK> implements Dao<T, PK> {
 
     private String pu = "FacemashProjectPU";
 
-    protected Class<T> type;
+    private Class<T> type;
+
+    private void setType(){
+        //lines to add when using generic Class<T>
+        Type t = getClass().getGenericSuperclass();
+        ParameterizedType pt = (ParameterizedType) t;
+        type = (Class) pt.getActualTypeArguments()[0];
+    }
 
     public EntityManager getEntityManager(){
         EntityManagerFactory emf = Persistence.createEntityManagerFactory(pu);
@@ -24,12 +31,7 @@ public abstract class AbstractDao<T, PK> implements Dao<T, PK> {
         return em;
     }
 
-    public void setType(){
-        //lines to add when using generic Class<T>
-        Type t = getClass().getGenericSuperclass();
-        ParameterizedType pt = (ParameterizedType) t;
-        type = (Class) pt.getActualTypeArguments()[0];
-    }
+
 
     @Override
     public boolean create(T obj) {
