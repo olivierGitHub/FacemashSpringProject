@@ -101,7 +101,33 @@ public abstract class AbstractDao<T, PK> implements Dao<T, PK> {
     }
 
     @Override
-    public void delete(PK id) {
+    public void delete(T obj) {
+
+        EntityManager em = getEntityManager();
+        EntityTransaction t = em.getTransaction();
+
+        try
+        {
+            t.begin();
+            /***
+             * To remove properly and avoid the "java.lang.IllegalArgumentException: Removing a detached instance"
+             * EntityManager#remove() works only on entities which are managed in the current transaction/context.
+             * In your case, you're retrieving the entity in an earlier transaction, storing it in the HTTP session
+             * and then attempting to remove it in a different transaction/context. This just won't work.
+             *
+             * You need to check if the entity is managed by EntityManager#contains() and if not, then make
+             * it managed it EntityManager#merge().
+             */
+            em.remove(em.contains(obj) ? obj : em.merge(obj));
+            t.commit();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            if (t.isActive()){
+                t.rollback();
+                em.close();
+            }
+        }
 
     }
 }

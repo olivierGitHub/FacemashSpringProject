@@ -8,6 +8,6 @@ public interface Dao<T, PK> {
     public boolean create(T obj);
     public T read(PK id);
     public void update(T obj);
-    public void delete(PK id);
+    public void delete(T obj);
 
 }
