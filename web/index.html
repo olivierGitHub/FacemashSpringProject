@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Facemash spring Project</title>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
+
+    <script src="index.js"></script>
+
+    <link rel='stylesheet' href="index.css">
+    <link rel='stylesheet' href="http://fonts.googleapis.com/css?family=Tangerine">
+    <link rel='stylesheet' href="./bower_components/angular-material/angular-material.min.css">
+</head>
+<body  ng-app="app">
+<md-toolbar id="toolbar" layout="column" layout-align="center center">
+    <h1>FACEMASH</h1>
+</md-toolbar>
+
+<md-content layout="column" layout-align="center center">
+    <p><b>Were we let in for our looks? No. Will we be judged on them? Yes.</b></p>
+    <h2>Who's Hotter? Click to Choose.</h2>
+
+    <div ui-view></div>
+
+</md-content>
+
+</body>
+</html>
