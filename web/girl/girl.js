@@ -5,6 +5,6 @@
 /* global angular */
 angular.module('girlApp', [])
 
-    .controller('girlCtrl', ['$scope', function ($$scope) {
+    .controller('girlCtrl', ['$scope', function ($scope) {
         'use strict';
     }]);

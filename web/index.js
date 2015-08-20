@@ -8,11 +8,11 @@ angular.module('app', ['ui.router', 'girlApp'])
     .config(function($urlRouterProvider, $stateProvider){
         'use strict';
 
-        $urlRouterProvider.otherwise("/home");
+        $urlRouterProvider.otherwise("/girl");
 
         $stateProvider
             .state('girl', {
-                url: '/choose_a_girl',
+                url: '/girl',
                 templateUrl: 'girl/girl.html'
             });
     });
