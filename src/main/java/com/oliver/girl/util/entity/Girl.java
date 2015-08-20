@@ -5,11 +5,14 @@ import javax.persistence.Table;
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Column;
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Created by oliver on 08/08/15.
  */
 @Entity
 @Table(name="Girl")
+@XmlRootElement
 public class Girl {
 
     @Id
