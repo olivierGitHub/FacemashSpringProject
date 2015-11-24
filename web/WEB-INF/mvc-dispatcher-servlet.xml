@@ -15,7 +15,7 @@
             <value>/</value>
         </property>
         <property name="suffix">
-            <value>.jsp</value>
+            <value>.html</value>
         </property>
     </bean>
 

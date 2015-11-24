@@ -8,16 +8,17 @@ import com.oliver.girl.util.entity.Girl;
 public class TestDao {
 
     public static void main(String[] args){
-        /*Girl girl = new Girl();
-            girl.setId(2);
+        Girl girl = new Girl();
+            //girl.setId(2);
             girl.setName("essai22");
             girl.setPath("essai22");
             girl.setRate(35.2);
-            girl.setVictorious(false);*/
+            girl.setVictorious(false);
 
         GirlDao girlDao = new GirlDaoImpl();
-        Girl girl = girlDao.read(2);
-        girlDao.delete(girl);
+        girlDao.create(girl);
+        /*Girl girl2 = girlDao.read(2);
+        girlDao.delete(girl2);*/
 
 
 

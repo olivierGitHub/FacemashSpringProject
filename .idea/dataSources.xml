@@ -2,11 +2,9 @@
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" hash="1815821572">
     <data-source source="LOCAL" name="FacemashProjectPU" uuid="4a263174-6eab-46dc-b821-655df377d68b">
-      <driver-ref>mysql</driver-ref>
+      <driver-ref>22b3e9b4-9225-4de2-abc0-99631523a9e3</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/facemashproject</jdbc-url>
-      <user-name>root</user-name>
-      <user-password>dfcbdfcedfc7dfc3dfc4</user-password>
       <libraries>
         <library>
           <url>file://C:\Users\oliver\.m2\repository\mysql\mysql-connector-java\5.1.28\mysql-connector-java-5.1.28.jar</url>
@@ -15,4 +13,3 @@
     </data-source>
   </component>
 </project>
-

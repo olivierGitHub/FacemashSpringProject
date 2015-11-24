@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Component
 public class GirlServiceImpl implements GirlService{
 
-    @Override
+
     public Girl getWinningGirl(Girl girlA, Girl girlB) {
         if (girlA.getVictorious()){
             girlA.setRate(calculateEloRate(girlA,girlB));
@@ -25,7 +25,7 @@ public class GirlServiceImpl implements GirlService{
         }
     }
 
-    @Override
+
     public double calculateEloRate(Girl girlA, Girl girlB) {
         double deltaRate = girlB.getRate() - girlA.getRate();
         double estimatedRate = 1 / (1 + Math.pow(10, deltaRate/400));
